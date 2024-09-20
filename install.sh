@@ -13,7 +13,7 @@ sudo apt-get update -y
 #-----------------------------------------------------------
 
 #Step 3) disable UART from retroflag install ---------------
-cd /boot/
+cd /boot/firmware/
 File=config.txt
 if grep -q "^enable_uart=1" "$File";
 	then
@@ -63,7 +63,7 @@ fi
 #-----------------------------------------------------------
 
 #Step 7) enable overlay file for powercut ---------------
-cd /boot/
+cd /boot/firmware/
 File=config.txt
 if ! grep -q "^dtoverlay=gpio-poweroff,gpiopin=4,active_low=1,input=1" $File; then
     echo "Enable overlay file"
